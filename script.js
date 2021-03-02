@@ -4,15 +4,19 @@ let btn = document.querySelector(".btn");
 // Устанавливаем обработчик события
 btn.addEventListener("click", function(event) {
     event.preventDefault();
-// Создаем новый экземпляр запроса
-    let request = new XMLHttpRequest();
-//Создаем еще один обработчик
-    request.onload = function() {
-        // В момент когда от сервера придёт ответ
-        let text = request.responseText;
-        document.querySelector(".text").innerHTML = text;
-    };
-// Открываем соединение и отправляем запрос
-    request.open("GET", "/data.txt");
-    request.send();
+
+    window.fetch("/data.json")
+        .then(function(response) {
+            console.log(response);
+            return response.json();
+        })
+        .then(function(response) {
+            document.querySelector(".project").innerHTML = response.project;
+            document.querySelector(".course").innerHTML = response.course;
+            document.querySelector(".module").innerHTML = response.module;
+            document.querySelector(".teacher").innerHTML = response.teacher;
+        });
 });
+
+
+// https://tproger.ru/books/cpp-books-beginners/

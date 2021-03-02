@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
     padding: 3vw 2vw 0 2vw;
     min-width: 100vw;
-    height: 100vmax;
+    height: 300vmax;
 }
 
 h2 {
@@ -30,7 +30,7 @@ h2 {
     margin: 0 auto;
     padding: 5vmin;
     width: 50vmin;
-    height: 200px;
+    max-height: 400px;
     text-align: center;
     background-color: #f7f7f9;
     border: 1px solid #e1e1e8;
